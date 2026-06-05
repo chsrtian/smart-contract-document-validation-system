@@ -1,4 +1,4 @@
-# Land Certification and Registration Office (LCRO) Document Management System
+# Local Civil Registry Office (LCRO) Document Management System
 
 A comprehensive document management system built for the Land Certification and Registration Office (LCRO) with blockchain integration for secure document verification and tracking.
 
