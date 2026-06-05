@@ -1,0 +1,498 @@
+.sv-dashboard {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem 2rem;
+}
+
+.sv-dashboard-header {
+    margin-bottom: 0.09375rem;
+}
+
+.sv-dashboard-header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--sv-text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.sv-dashboard-header p {
+    font-size: 0.875rem;
+    color: var(--sv-text-muted);
+}
+
+/* Utility Links Row */
+.sv-util-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.sv-util-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--sv-bg-card);
+    border: 1px solid var(--sv-border-light);
+    border-radius: 0.5rem;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--sv-text-secondary);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.sv-util-link:hover {
+    background: var(--sv-bg-card-hover);
+    color: var(--sv-primary);
+    border-color: var(--sv-primary);
+}
+
+.sv-util-link i {
+    font-size: 0.875rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   STATS CARDS GRID
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.sv-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Stats Card - Clickable */
+.sv-stat-card {
+    display: block;
+    background: var(--sv-bg-card);
+    border: 1px solid var(--sv-border-light);
+    border-radius: 0.75rem;
+    box-shadow: var(--sv-shadow-card);
+    overflow: hidden;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.sv-stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--sv-shadow-md);
+    border-color: var(--sv-primary);
+}
+
+.sv-stat-card:active {
+    transform: translateY(0);
+}
+
+/* Accent bar on left */
+.sv-stat-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+}
+
+.sv-stat-card.pending::before { background: var(--sv-warning); }
+.sv-stat-card.approved::before { background: var(--sv-success); }
+.sv-stat-card.rejected::before { background: var(--sv-danger); }
+
+/* Card Content */
+.sv-stat-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+}
+
+.sv-stat-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.sv-stat-card.pending .sv-stat-icon {
+    background: var(--sv-warning-light);
+    color: var(--sv-warning);
+}
+
+.sv-stat-card.approved .sv-stat-icon {
+    background: var(--sv-success-light);
+    color: var(--sv-success);
+}
+
+.sv-stat-card.rejected .sv-stat-icon {
+    background: var(--sv-danger-light);
+    color: var(--sv-danger);
+}
+
+.sv-stat-info {
+    flex: 1;
+}
+
+.sv-stat-label {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--sv-text-muted);
+    margin-bottom: 0.25rem;
+}
+
+/* Emphasized Numbers */
+.sv-stat-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--sv-text-primary);
+}
+
+/* Card Footer */
+.sv-stat-footer {
+    padding: 0.75rem 1.5rem;
+    border-top: 1px solid var(--sv-border-light);
+    background: var(--sv-bg-muted);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sv-stat-footer-text {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--sv-text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sv-stat-footer-text i {
+    transition: transform 0.2s ease;
+}
+
+.sv-stat-card:hover .sv-stat-footer-text i {
+    transform: translateX(4px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RECENT REQUESTS TABLE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.sv-requests-panel {
+    background: var(--sv-bg-card);
+    border: 1px solid var(--sv-border-light);
+    border-radius: 0.75rem;
+    box-shadow: var(--sv-shadow-card);
+    overflow: hidden;
+}
+
+.sv-requests-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--sv-border-light);
+}
+
+.sv-requests-header h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--sv-text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sv-requests-header h2 i {
+    color: var(--sv-primary);
+}
+
+/* View All Button with Icon */
+.sv-btn-viewall {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--sv-primary);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.sv-btn-viewall:hover {
+    background: var(--sv-primary-hover);
+    transform: translateY(-1px);
+}
+
+.sv-btn-viewall i {
+    font-size: 0.75rem;
+}
+
+/* Request List */
+.sv-requests-list {
+    padding: 0;
+}
+
+/* Request Row - Proper Vertical Alignment */
+.sv-request-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--sv-border-light);
+    transition: background 0.15s ease;
+}
+
+.sv-request-row:last-child {
+    border-bottom: none;
+}
+
+.sv-request-row:hover {
+    background: var(--sv-bg-card-hover);
+}
+
+/* Left Content */
+.sv-request-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.sv-request-top {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.sv-request-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.625rem;
+    border-radius: 9999px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+}
+
+.sv-request-tag.pending {
+    background: var(--sv-warning-light);
+    color: var(--sv-warning-dark);
+}
+
+.sv-request-time {
+    font-size: 0.75rem;
+    color: var(--sv-text-muted);
+}
+
+.sv-request-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--sv-text-primary);
+}
+
+.sv-request-change {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+}
+
+.sv-request-old {
+    color: var(--sv-danger);
+    text-decoration: line-through;
+}
+
+.sv-request-arrow {
+    color: var(--sv-text-light);
+    font-size: 0.75rem;
+}
+
+.sv-request-new {
+    color: var(--sv-success);
+    font-weight: 600;
+}
+
+.sv-request-meta {
+    font-size: 0.75rem;
+    color: var(--sv-text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+}
+
+/* Review Button with Icon - Properly Aligned */
+.sv-btn-review {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--sv-primary);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+.sv-btn-review:hover {
+    background: var(--sv-primary-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--sv-shadow-sm);
+}
+
+.sv-btn-review i {
+    font-size: 0.875rem;
+}
+
+/* Empty State */
+.sv-empty-state {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: var(--sv-text-muted);
+}
+
+.sv-empty-state i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.sv-empty-state p {
+    font-size: 0.9375rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   WORKFLOW REMINDER (Collapsible)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.sv-workflow-box {
+    background: var(--sv-bg-muted);
+    border: 1px solid var(--sv-border-light);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    margin-top: 1.5rem;
+}
+
+.sv-workflow-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.875rem 1.25rem;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.sv-workflow-header:hover {
+    background: var(--sv-bg-card-hover);
+}
+
+.sv-workflow-header h3 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--sv-text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sv-workflow-header h3 i {
+    color: var(--sv-primary);
+}
+
+.sv-workflow-toggle {
+    color: var(--sv-text-muted);
+    font-size: 0.75rem;
+    transition: transform 0.2s ease;
+}
+
+.sv-workflow-box.open .sv-workflow-toggle {
+    transform: rotate(180deg);
+}
+
+.sv-workflow-body {
+    display: none;
+    padding: 0 1.25rem 1.25rem;
+}
+
+.sv-workflow-box.open .sv-workflow-body {
+    display: block;
+}
+
+.sv-workflow-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sv-workflow-body li {
+    position: relative;
+    padding: 0.375rem 0 0.375rem 1.25rem;
+    font-size: 0.8125rem;
+    color: var(--sv-text-secondary);
+}
+
+.sv-workflow-body li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.625rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--sv-primary);
+}
+
+.sv-workflow-body li strong {
+    color: var(--sv-text-primary);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+    .sv-dashboard {
+        padding: 1rem;
+    }
+    
+    .sv-util-links {
+        justify-content: center;
+    }
+    
+    .sv-stat-value {
+        font-size: 2rem;
+    }
+    
+    .sv-request-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .sv-btn-review {
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+    }
+}

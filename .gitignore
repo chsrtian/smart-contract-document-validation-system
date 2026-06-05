@@ -1,0 +1,65 @@
+# Laravel specific
+.env
+.env.backup
+.env.production
+.phpactor.json
+.phpunit.result.cache
+/.fleet
+/.idea
+/.nova
+/.phpunit.cache
+/.vscode
+/.zed
+/auth.json
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/storage/logs/*.log
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/testing/*
+/storage/framework/views/*
+/vendor
+Homestead.json
+Homestead.yaml
+Thumbs.db
+
+# OS generated files
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Logs
+*.log
+laravel.log
+
+# Vite
+/node_modules
+/public/hot
+/public/storage
+/public/build
+
+# IDEs
+.idea
+*.sublime-workspace
+*.sublime-project
+
+# PHPStan
+phpstan.*.neon.baseline
+phpstan.shadow
+
+# Tests
+code-coverage
+
+# Envoy
+.envoy/*/stats.bin
+
+# Misc
+*/config/*/local.php
+*/config/*/local.js
+*/config/*/local.json
+composer.phar

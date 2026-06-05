@@ -1,0 +1,577 @@
+/* ============================================================
+   Legal Corrections (Petitions) – Admin Side
+   External CSS for admin legal correction approval views
+   ============================================================ */
+
+/* ── Admin Legal Stats ── */
+.alc-stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.alc-stat-card {
+    background: #fff;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.alc-stat-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0.625rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.125rem;
+    flex-shrink: 0;
+}
+
+.alc-stat-icon.pending { background: #fef3c7; color: #d97706; }
+.alc-stat-icon.approved { background: #d1fae5; color: #059669; }
+.alc-stat-icon.rejected { background: #fee2e2; color: #dc2626; }
+.alc-stat-icon.forwarded { background: #dbeafe; color: #2563eb; }
+.alc-stat-icon.total { background: #ede9fe; color: #7c3aed; }
+
+.alc-stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1;
+}
+
+.alc-stat-label {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-top: 0.125rem;
+}
+
+/* ── Table Styles ── */
+.alc-table-wrap {
+    background: #fff;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.alc-table-wrap table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.alc-table-wrap thead th {
+    background: #f9fafb;
+    padding: 0.75rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.alc-table-wrap tbody td {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    color: #374151;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: middle;
+}
+
+.alc-table-wrap tbody tr:hover {
+    background: #f9fafb;
+}
+
+.alc-table-wrap tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ── Status Badge (admin) ── */
+.alc-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.alc-badge.draft { background: #f3f4f6; color: #4b5563; }
+.alc-badge.pending_approval { background: #fef3c7; color: #92400e; }
+.alc-badge.approved { background: #d1fae5; color: #065f46; }
+.alc-badge.rejected { background: #fee2e2; color: #991b1b; }
+.alc-badge.forwarded_to_psa { background: #dbeafe; color: #1e40af; }
+
+.alc-badge i { font-size: 0.625rem; }
+
+/* ── Detail Page Layout ── */
+.alc-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.alc-detail-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.alc-detail-meta {
+    font-size: 0.8125rem;
+    color: #6b7280;
+    margin-top: 0.25rem;
+}
+
+.alc-detail-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.alc-section {
+    background: #fff;
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.alc-section h3 {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.alc-section h3 i {
+    color: #6366f1;
+    font-size: 0.875rem;
+}
+
+.alc-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 0.75rem;
+}
+
+.alc-detail-item dt {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.alc-detail-item dd {
+    font-size: 0.875rem;
+    color: #111827;
+    margin-top: 0.125rem;
+}
+
+/* ── Changes Table (in detail) ── */
+.alc-changes-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+}
+
+.alc-changes-table th {
+    padding: 0.625rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    text-align: left;
+    background: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.alc-changes-table td {
+    padding: 0.625rem 0.75rem;
+    font-size: 0.8125rem;
+    color: #374151;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.alc-changes-table .old-value {
+    background: #fef2f2;
+    color: #991b1b;
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.25rem;
+    text-decoration: line-through;
+    font-size: 0.8125rem;
+}
+
+.alc-changes-table .new-value {
+    background: #f0fdf4;
+    color: #166534;
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    font-size: 0.8125rem;
+}
+
+/* ── Annotation Preview ── */
+.alc-annotation-preview {
+    background: #fffbeb;
+    border: 1px solid #fbbf24;
+    border-left: 4px solid #f59e0b;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    font-size: 0.8125rem;
+    color: #92400e;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    margin-top: 0.5rem;
+}
+
+/* ── PSA Forwarding Block ── */
+.alc-psa-block {
+    background: #eff6ff;
+    border: 1px solid #93c5fd;
+    border-left: 4px solid #3b82f6;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    font-size: 0.8125rem;
+    color: #1e3a5f;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    margin-top: 0.5rem;
+}
+
+/* ── Approval/Reject Form ── */
+.alc-action-form {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+.alc-action-form label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #374151;
+    display: block;
+    margin-bottom: 0.375rem;
+}
+
+.alc-action-form textarea,
+.alc-action-form input {
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    color: #111827;
+    margin-bottom: 0.75rem;
+    resize: vertical;
+}
+
+.alc-action-form textarea:focus,
+.alc-action-form input:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* ── Attachments List ── */
+.alc-attachments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.alc-attachment-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.625rem 0.75rem;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.375rem;
+}
+
+.alc-attachment-item i {
+    color: #6366f1;
+    font-size: 1rem;
+}
+
+.alc-attachment-item .file-name {
+    font-size: 0.8125rem;
+    color: #111827;
+    font-weight: 500;
+}
+
+.alc-attachment-item .file-meta {
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
+
+/* ── Filter Bar ── */
+.alc-filter-bar {
+    background: #fff;
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.alc-filter-bar form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: flex-end;
+}
+
+.alc-filter-group {
+    flex: 1;
+    min-width: 140px;
+    display: flex;
+    flex-direction: column;
+}
+
+.alc-filter-group label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6b7280;
+    margin-bottom: 0.25rem;
+}
+
+.alc-filter-group input,
+.alc-filter-group select {
+    padding: 0.5rem 0.625rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 0.8125rem;
+    color: #111827;
+}
+
+.alc-filter-group input:focus,
+.alc-filter-group select:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* ── Buttons ── */
+.alc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.alc-btn-primary { background: #6366f1; color: #fff; }
+.alc-btn-primary:hover { background: #4f46e5; color: #fff; }
+
+.alc-btn-success { background: #059669; color: #fff; }
+.alc-btn-success:hover { background: #047857; color: #fff; }
+
+.alc-btn-danger { background: #dc2626; color: #fff; }
+.alc-btn-danger:hover { background: #b91c1c; color: #fff; }
+
+.alc-btn-blue { background: #2563eb; color: #fff; }
+.alc-btn-blue:hover { background: #1d4ed8; color: #fff; }
+
+.alc-btn-secondary { background: #e5e7eb; color: #374151; }
+.alc-btn-secondary:hover { background: #d1d5db; color: #1f2937; }
+
+.alc-btn-sm { padding: 0.375rem 0.75rem; font-size: 0.75rem; }
+
+/* ── Empty State ── */
+.alc-empty-state {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    color: #9ca3af;
+}
+
+.alc-empty-state i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.alc-empty-state p {
+    font-size: 0.9375rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ── Modern Layout Additions ── */
+.alc-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.alc-side-column {
+    position: sticky;
+    top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.alc-val-box {
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.375rem;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    display: inline-block;
+    word-break: break-all;
+}
+
+.alc-val-old {
+    background-color: #fef2f2;
+    color: #b91c1c;
+    border: 1px solid #fca5a5;
+    text-decoration: line-through;
+}
+
+.alc-val-new {
+    background-color: #f0fdf4;
+    color: #15803d;
+    border: 1px solid #86efac;
+}
+
+.alc-strong {
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.alc-muted {
+    color: #64748b;
+    font-size: 0.8125rem;
+}
+
+.alc-monospace-value {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.85rem;
+    color: #334155;
+    background: #f8fafc;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    border: 1px solid #e2e8f0;
+}
+
+.alc-action-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.alc-btn-approve, .alc-btn-reject {
+    flex: 1;
+    justify-content: center;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.alc-btn-approve {
+    background: #22c55e;
+    color: #fff;
+    box-shadow: 0 1px 2px rgba(34, 197, 94, 0.2);
+}
+
+.alc-btn-approve:hover {
+    background: #16a34a;
+}
+
+.alc-btn-reject {
+    background: #ef4444;
+    color: #fff;
+    box-shadow: 0 1px 2px rgba(239, 68, 68, 0.2);
+}
+
+.alc-btn-reject:hover {
+    background: #dc2626;
+}
+
+.alc-text-block {
+    font-size: 0.875rem;
+    color: #334155;
+    line-height: 1.5;
+}
+
+.alc-span-full {
+    grid-column: 1 / -1;
+}
+
+.alc-meta-list {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-top: 0.5rem;
+}
+
+.alc-meta-list dt {
+    font-weight: 600;
+    color: #475569;
+}
+
+.alc-form-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .alc-stats-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .alc-detail-header {
+        flex-direction: column;
+    }
+
+    .alc-filter-bar form {
+        flex-direction: column;
+    }
+
+    .alc-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .alc-side-column {
+        position: static;
+    }
+}

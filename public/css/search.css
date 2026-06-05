@@ -1,0 +1,81 @@
+/* public/css/search.css */
+
+/* 1. Ang Main Card Container */
+.stat-card {
+    background-color: #ffffff;
+    border: 1px solid #000000; /* Dashboard-style border (Black) */
+    border-radius: 0.75rem; /* rounded-xl */
+    padding: 1.5rem; /* p-6 */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease-in-out;
+    height: 100%; /* Para pantay ang gitas-on */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+/* Hover Effect */
+.stat-card:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* 2. Layout sa Sulod (Flexbox para sa Icon ug Content) */
+.stat-card-body {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem; /* space-x-4 equivalent */
+}
+
+/* 3. Ang Icon Container (Box nga naay color) */
+.stat-icon {
+    width: 3rem; /* w-12 */
+    height: 3rem; /* h-12 */
+    border-radius: 0.5rem; /* rounded-lg */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Icon Sizes */
+.stat-icon svg, 
+.stat-icon i {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1.5rem;
+    color: white; /* White icon color */
+}
+
+/* Color Variations para sa Icons */
+.icon-blue { background-color: #3b82f6; }   /* Birth */
+.icon-pink { background-color: #db2777; }   /* Marriage */
+.icon-gray { background-color: #4b5563; }   /* Death */
+.icon-green { background-color: #16a34a; }  /* Others */
+
+/* 4. Typography (Text Styles) */
+.stat-value {
+    font-size: 1.875rem; /* text-3xl */
+    line-height: 2.25rem;
+    font-weight: 700; /* font-bold */
+    color: #000000; /* text-black */
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 700; /* font-bold */
+    text-transform: uppercase;
+    letter-spacing: 0.025em; /* tracking-wide */
+    color: #000000;
+}
+
+.stat-desc {
+    font-size: 0.75rem; /* text-xs */
+    color: #6b7280; /* text-gray-500 */
+    margin-top: 0.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

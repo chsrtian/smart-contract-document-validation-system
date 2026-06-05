@@ -1,0 +1,508 @@
+/* ============================================================
+   Legal Corrections (Petitions) – Staff Side
+   External CSS for petition list and create views
+   ============================================================ */
+
+/* ── Petition Stats Row ── */
+.lc-stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.lc-stat-card {
+    background: #fff;
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.2s ease;
+}
+
+.lc-stat-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.lc-stat-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.lc-stat-icon.draft { background: #f3f4f6; color: #6b7280; }
+.lc-stat-icon.pending { background: #fef3c7; color: #d97706; }
+.lc-stat-icon.approved { background: #d1fae5; color: #059669; }
+.lc-stat-icon.rejected { background: #fee2e2; color: #dc2626; }
+.lc-stat-icon.forwarded { background: #dbeafe; color: #2563eb; }
+.lc-stat-icon.total { background: #ede9fe; color: #7c3aed; }
+
+.lc-stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1;
+}
+
+.lc-stat-label {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-top: 0.125rem;
+}
+
+/* ── Petition Table ── */
+.lc-table-wrap {
+    background: #fff;
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.lc-table-wrap table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.lc-table-wrap thead th {
+    background: #f9fafb;
+    padding: 0.75rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.lc-table-wrap tbody td {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    color: #374151;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: middle;
+}
+
+.lc-table-wrap tbody tr:hover {
+    background: #f9fafb;
+}
+
+.lc-table-wrap tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ── Status Badge ── */
+.lc-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.lc-badge.draft { background: #f3f4f6; color: #4b5563; }
+.lc-badge.pending_approval { background: #fef3c7; color: #92400e; }
+.lc-badge.approved { background: #d1fae5; color: #065f46; }
+.lc-badge.rejected { background: #fee2e2; color: #991b1b; }
+.lc-badge.forwarded_to_psa { background: #dbeafe; color: #1e40af; }
+
+.lc-badge i { font-size: 0.625rem; }
+
+/* ── Petition Type Pill ── */
+.lc-type-pill {
+    display: inline-block;
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.375rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    background: #ede9fe;
+    color: #5b21b6;
+}
+
+/* ── Create Form ── */
+.lc-form-section {
+    background: #fff;
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.lc-form-section-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.lc-form-section-title i {
+    color: #6366f1;
+}
+
+.lc-form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.lc-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.lc-form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.lc-form-group label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.375rem;
+}
+
+.lc-form-group label .required {
+    color: #dc2626;
+    margin-left: 0.125rem;
+}
+
+.lc-form-group input,
+.lc-form-group select,
+.lc-form-group textarea {
+    padding: 0.625rem 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    color: #111827;
+    background: #fff;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.lc-form-group input:focus,
+.lc-form-group select:focus,
+.lc-form-group textarea:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.lc-form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.lc-form-group .help-text {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin-top: 0.25rem;
+}
+
+/* ── Field Changes Section ── */
+.lc-field-changes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.lc-field-change-row {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    position: relative;
+}
+
+.lc-field-change-row .lc-remove-field-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: #fee2e2;
+    color: #dc2626;
+    border: none;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+}
+
+.lc-field-change-row .lc-remove-field-btn:hover {
+    background: #dc2626;
+    color: #fff;
+}
+
+.lc-add-field-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 2px dashed #d1d5db;
+    border-radius: 0.5rem;
+    background: transparent;
+    color: #6366f1;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 0.5rem;
+}
+
+.lc-add-field-btn:hover {
+    border-color: #6366f1;
+    background: #eef2ff;
+}
+
+/* ── Attachments ── */
+.lc-attachment-row {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 0.75rem;
+    align-items: end;
+    margin-bottom: 0.75rem;
+}
+
+.lc-attachment-row .lc-remove-attach-btn {
+    background: #fee2e2;
+    color: #dc2626;
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+}
+
+.lc-attachment-row .lc-remove-attach-btn:hover {
+    background: #dc2626;
+    color: #fff;
+}
+
+/* ── Show/Detail Page ── */
+.lc-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.lc-detail-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.lc-detail-meta {
+    font-size: 0.8125rem;
+    color: #6b7280;
+    margin-top: 0.25rem;
+}
+
+.lc-detail-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.lc-detail-section {
+    background: #fff;
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.lc-detail-section h3 {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.lc-detail-section h3 i {
+    color: #6366f1;
+    font-size: 0.875rem;
+}
+
+.lc-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 0.75rem;
+}
+
+.lc-detail-item dt {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.lc-detail-item dd {
+    font-size: 0.875rem;
+    color: #111827;
+    margin-top: 0.125rem;
+}
+
+/* ── Annotation Preview ── */
+.lc-annotation-preview {
+    background: #fffbeb;
+    border: 1px solid #fbbf24;
+    border-left: 4px solid #f59e0b;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    font-size: 0.8125rem;
+    color: #92400e;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+/* ── PSA Forwarding Block ── */
+.lc-psa-block {
+    background: #eff6ff;
+    border: 1px solid #93c5fd;
+    border-left: 4px solid #3b82f6;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    font-size: 0.8125rem;
+    color: #1e3a5f;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+/* ── Buttons (reusable) ── */
+.lc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.lc-btn-primary { background: #6366f1; color: #fff; }
+.lc-btn-primary:hover { background: #4f46e5; color: #fff; }
+
+.lc-btn-success { background: #059669; color: #fff; }
+.lc-btn-success:hover { background: #047857; color: #fff; }
+
+.lc-btn-danger { background: #dc2626; color: #fff; }
+.lc-btn-danger:hover { background: #b91c1c; color: #fff; }
+
+.lc-btn-secondary { background: #e5e7eb; color: #374151; }
+.lc-btn-secondary:hover { background: #d1d5db; color: #1f2937; }
+
+.lc-btn-outline { background: transparent; border: 1px solid #d1d5db; color: #374151; }
+.lc-btn-outline:hover { background: #f9fafb; }
+
+.lc-btn-sm { padding: 0.375rem 0.75rem; font-size: 0.75rem; }
+
+/* ── Filter Bar ── */
+.lc-filter-bar {
+    background: #fff;
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.lc-filter-bar form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: flex-end;
+}
+
+.lc-filter-bar .lc-form-group {
+    flex: 1;
+    min-width: 160px;
+}
+
+.lc-filter-bar .lc-form-group label {
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.lc-filter-bar .lc-form-group input,
+.lc-filter-bar .lc-form-group select {
+    padding: 0.5rem 0.625rem;
+    font-size: 0.8125rem;
+}
+
+/* ── Empty State ── */
+.lc-empty-state {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    color: #9ca3af;
+}
+
+.lc-empty-state i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.lc-empty-state p {
+    font-size: 0.9375rem;
+    margin-bottom: 1rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .lc-stats-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .lc-detail-header {
+        flex-direction: column;
+    }
+
+    .lc-attachment-row {
+        grid-template-columns: 1fr;
+    }
+
+    .lc-filter-bar form {
+        flex-direction: column;
+    }
+}
