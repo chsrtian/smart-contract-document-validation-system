@@ -109,22 +109,6 @@ A comprehensive document management system built for the Land Certification and 
     ganache-cli --port 7545 --deterministic
     ```
 
-## Screenshots
-
-![Staff Dashboard](screenshots/staff-dashboard.png)
-*Staff Dashboard showing document statistics and quick actions*
-
-![Document Upload](screenshots/document-upload.png)
-*Document upload interface with file validation*
-
-![Admin Panel](screenshots/admin-panel.png)
-*Administrative control panel for user and document management*
-
-![Blockchain Verification](screenshots/blockchain-verification.png)
-*Blockchain-based document verification results*
-
-*Note: Add actual screenshots to the screenshots directory and update these references*
-
 ## Project Status
 
 - ✅ Core document management functionality
